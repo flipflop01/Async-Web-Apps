@@ -5,3 +5,7 @@
 main {
 	text-align: center;
 }
+
+.result-alert {
+	opacity: 0;
+}

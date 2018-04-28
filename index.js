@@ -9,7 +9,8 @@ function getDatafromAPI(searchTerms, callback) {
 		data: {
 			part: 'snippet',
 			key: apiKey,
-			q: `${searchTerms} in:name`
+			q: `${searchTerms}`,
+			per_page: 10,
 		},
 		dataType: 'json',
 		type: 'GET',
@@ -22,6 +23,7 @@ $.ajax(settings);
 //RENDER RESULTS FUNCTION 
 function renderResults(result) {
 	return `
+	<p role="alert" class="result-alert">Search Complete</p> 
 	<div>
 		<h2>
 		<a href="https://www.youtube.com/watch?v=${result.id.videoId}">${result.snippet.title}</a>
